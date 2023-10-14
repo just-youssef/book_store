@@ -1,4 +1,4 @@
-import Book from "models/Book";
+import Book from "@models/book";
 import { connectToDB } from "utils/database";
 
 export const GET = async (request) => {
