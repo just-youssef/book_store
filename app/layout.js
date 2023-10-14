@@ -8,6 +8,8 @@ export const metadata = {
   description: 'Helps you to find your book!',
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({ children }) {
   checkUser();
 
