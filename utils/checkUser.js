@@ -14,6 +14,13 @@ const checkUser = async () => {
             const userExists = await User.findOne({
                 _id: user.id
             })
+            
+            // check for user picture
+            if(userExists && !userExists.picture){
+                userExists.picture = user.picture
+                await userExists.save();
+            }
+
             //create new user
             if (!userExists) {
                 await User.create({

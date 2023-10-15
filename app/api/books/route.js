@@ -1,6 +1,7 @@
 import Book from "@models/book";
 import { connectToDB } from "utils/database";
 
+// api to get all books in db
 export const GET = async (request) => {
     try {
         await connectToDB()

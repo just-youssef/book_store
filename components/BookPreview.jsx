@@ -1,6 +1,5 @@
 "use client";
 
-import Link from 'next/link';
 import { useEffect, useState } from 'react'
 import { useRouter } from "next/navigation";
 import LoadPage from './LoadPage';
@@ -32,16 +31,15 @@ const BookPreview = ({currentUser, bookId}) => {
       
           if (hasConfirmed) {
             try {
-              await fetch(`/api/books/${bookId.toString()}`, {
-                method: "DELETE",
-              });
+              await fetch(`/api/books/${bookId.toString()}`, {method: "DELETE"});
+              router.push(`/`)
             } catch (error) {
               console.log(error);
             }
           }
     }
     
-    console.log(book);
+    // console.log(book);
     if(!book.owner) return <LoadPage />
 
     return (
@@ -98,7 +96,7 @@ const BookPreview = ({currentUser, bookId}) => {
 
         <embed
             type="application/pdf"
-            className='h-screen w-full rounded-lg border border-gray-500 shadow-xl'
+            className='h-screen rounded-lg border border-gray-500 shadow-xl'
             src={book.src}
         />
     </div>

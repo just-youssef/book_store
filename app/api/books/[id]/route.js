@@ -1,6 +1,7 @@
 import Book from "models/book";
 import { connectToDB } from "utils/database";
 
+// api to get book by id
 export const GET = async (request, { params }) => {
     try {
         await connectToDB()
@@ -9,12 +10,12 @@ export const GET = async (request, { params }) => {
         if (!book) return new Response("Book Not Found", { status: 404 });
 
         return new Response(JSON.stringify(book), { status: 200 })
-
     } catch (error) {
         return new Response("Internal Server Error", { status: 500 });
     }
 }
 
+// api to update existing book by ID
 export const PATCH = async (request, { params }) => {
     const { title, desc, src, price, offer } = await request.json();
 
@@ -39,6 +40,7 @@ export const PATCH = async (request, { params }) => {
     }
 }
 
+// api to delete existing book by ID
 export const DELETE = async (request, { params }) => {
     try {
         await connectToDB();

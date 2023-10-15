@@ -71,7 +71,6 @@ const page = () => {
             id="offer"
             className='input_box'
             placeholder='*Book Offer/Voucher?'
-            required
             value={book.offer}
             onChange={(e) => setBook({ ...book, offer: e.target.value })}
         />

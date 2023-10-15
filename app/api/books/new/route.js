@@ -1,6 +1,7 @@
 import Book from "models/book";
 import { connectToDB } from "utils/database";
 
+// api to create new book
 export const POST = async (request) => {
     const { userId, title, desc, src, price, offer } = await request.json();
 

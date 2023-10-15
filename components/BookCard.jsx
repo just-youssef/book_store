@@ -37,7 +37,7 @@ const BookCard = ({ book, handleEdit, handleDelete }) => {
         </div>
       </div>
 
-      <div className='flex flex-col mt-4 gap-2'>
+      <div className='flex flex-col justify-between mt-4 gap-4 h-full'>
         <div className='flex justify-between w-full'>
           <h1 className='font-semibold text-xl text-blue-700 w-2/3'>{book.title}</h1>
 
@@ -47,37 +47,38 @@ const BookCard = ({ book, handleEdit, handleDelete }) => {
           </div>
         </div>
 
-        <div className='flex flex-col text-sm '>
+        
         {book.desc &&
-          <>
+          <div className='flex flex-col text-sm '>
           <p className='font-semibold'>Description:</p>
           <p className='text-gray-500'>{book.desc}</p>
-          </>
-        }
-        </div>
-
-        <button
-          className='w-full mt-4 preview-btn'
-          onClick={()=> router.push(`/books/${book._id}`)}
-        >
-          Preview Book
-        </button>
-
-        {pathName === "/profile" && (
-          <div className='flex justify-between items-center gap-2'>
-            <button
-              className='edit_btn'
-              onClick={handleEdit}
-            >
-              Edit
-            </button>
-            <button 
-              className='del_btn' onClick={handleDelete}
-            >
-              Delete
-            </button>
           </div>
-        )}
+        }
+
+        <div className='flex flex-col gap-2'>
+          <button
+            className='w-full preview-btn'
+            onClick={()=> router.push(`/books/${book._id}`)}
+          >
+            Preview Book
+          </button>
+
+          {pathName === "/profile" && (
+            <div className='flex justify-between items-center gap-2'>
+              <button
+                className='edit_btn'
+                onClick={handleEdit}
+              >
+                Edit
+              </button>
+              <button 
+                className='del_btn' onClick={handleDelete}
+              >
+                Delete
+              </button>
+            </div>
+          )}
+        </div>
 
       </div>
     </section>

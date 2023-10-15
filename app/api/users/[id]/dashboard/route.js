@@ -1,6 +1,7 @@
 import Dashboard from "models/dashboard";
 import { connectToDB } from "utils/database";
 
+// api to get the dashboard details of certain user by id
 export const GET = async (request, { params }) => {
     try {
         await connectToDB()
@@ -15,6 +16,7 @@ export const GET = async (request, { params }) => {
     }
 }
 
+// api to create new dashboard for certain user by id
 export const POST = async (request) => {
     const { userId, balance, book_selling, top_selling } = await request.json();
 
@@ -30,6 +32,7 @@ export const POST = async (request) => {
     }
 }
 
+// api to update dashboard for certain user by id
 export const PATCH = async (request, { params }) => {
     const { balance, book_selling, top_selling } = await request.json();
 
@@ -52,6 +55,7 @@ export const PATCH = async (request, { params }) => {
     }
 }
 
+// api to delete dashboard for certain user by id
 export const DELETE = async (request, { params }) => {
     try {
         await connectToDB();

@@ -1,6 +1,7 @@
 import Book from "models/book";
 import { connectToDB } from "utils/database";
 
+// api to get all books of certain user by id
 export const GET = async (request, { params }) => {
     try {
         await connectToDB()

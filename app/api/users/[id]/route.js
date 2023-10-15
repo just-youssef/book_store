@@ -1,6 +1,7 @@
 import User from "models/user";
 import { connectToDB } from "utils/database";
 
+// api to get the details of certain user by id
 export const GET = async (request, { params }) => {
     try {
         await connectToDB()

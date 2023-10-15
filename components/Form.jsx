@@ -58,10 +58,10 @@ const Form = ({type, book, setBook, submitting, handleSubmit}) => {
 
         {book.src ?
           <>
-            <object
+            <embed
               className='h-screen'
               type='application/pdf'
-              data={book.src}
+              src={book.src}
             />
 
             <div className='flex flex-col gap-1'>
