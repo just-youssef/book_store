@@ -15,5 +15,5 @@ Helps you to find your book!
     * <code>KINDE_POST_LOGIN_REDIRECT_URL</code>
     * <code>MONGODB_URI</code>
 5. Open cmd in <code>book_store</code> dir.
-6. Run <code>nmp i</code>
-7. Run <code>nmp run dev</code>
+6. Run <code>npm i</code>
+7. Run <code>npm run dev</code>
