@@ -9,7 +9,7 @@ const AddBook = ({ user }) => {
 
   const [submitting, setIsSubmitting] = useState(false);
   const [book, setBook] = useState({ title: "", desc: "", src: "", price: "", offer: "" });
-  
+
   const addBookHandler = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -41,18 +41,18 @@ const AddBook = ({ user }) => {
   return (
     <div>
       {
-        user?
-        <Form
-          type="Add"
-          book={book}
-          setBook={setBook}
-          submitting={submitting}
-          handleSubmit={addBookHandler}
-        />
-        :
-        <div className='flex justify-center'>
-          <p className="text-4xl font-semibold">You are not Signed In!</p>
-        </div>
+        user ?
+          <Form
+            type="Add"
+            book={book}
+            setBook={setBook}
+            submitting={submitting}
+            handleSubmit={addBookHandler}
+          />
+          :
+          <div className='flex justify-center'>
+            <p className="text-4xl font-semibold">You are not Signed In!</p>
+          </div>
       }
     </div>
   )
