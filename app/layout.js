@@ -15,6 +15,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <meta charSet="UTF-8" />
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className="flex flex-col min-h-screen bg-gray-50 font-manrope">
         <NavbarExtended />
         <main className='max-sm:px-5 px-10 py-5'>
